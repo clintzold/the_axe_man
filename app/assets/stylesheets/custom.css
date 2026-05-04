@@ -1,0 +1,52 @@
+.home-bg {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100lvh;
+  z-index: -1;
+  position: fixed;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3)),
+              url('axe-stump.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.blur {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+navbar, .footer-container {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hero-section {
+  min-height: 800px;
+}
+
+.content-section {
+  min-height: 600px;
+}
+
+.hero-logo {
+  width: clamp(20vw, 300px, 50vw);
+}
+
+/* BUTTONS */
+
+.cta-btn {
+  border-radius: 15px 0 15px 0;
+  corner-shape: bevel;
+  border: none;
+}
+
+/* BREAK POINTS */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 800px;
+  }
+}
