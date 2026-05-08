@@ -11,7 +11,7 @@
       <main class="col-12 col-lg-10 col-xl-8 col-xxl-6">
         <div class="container">
           <div class="d-flex align-items-center hero-section">
-            <p class="display-1 rubik-dirt-regular m-0" style="text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);">
+            <p class="display-1 rubik-dirt-regular mt-5" style="text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);">
               <span class="text-white">Got a tough job?</span> Let us chop it down to size.
           <%= link_to "Call Now",
             pages_path,
@@ -28,13 +28,13 @@
 </header>
 
 <section id="services">
-  <div class="container-fluid content-section">
-    <div class="row py-3">
+  <div class="container-fluid">
+    <div class="row py-5">
 
-      <div class="container col-12 col-sm-4 mb-3">
-        <div class="bg-transparent clear-dark-blur d-flex flex-column align-items-center">
+      <div class="container col-12 col-sm-4 mb-5">
+        <div class="bg-transparent d-flex flex-column align-items-center">
           <img src="https://placehold.co/400" alt="" class="card-image w-75 shadow mb-2">
-          <div class="card-body text-center">
+          <div class="card-body text-center text-white text-shadow">
             <h3 class="card-title saira-stencil-one-regular">Service One</h3>
             <p class="card-text saira-stencil-one-regular">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam consequatur odit ipsum recusandae quis temporibus.
@@ -43,10 +43,10 @@
         </div>
       </div>
 
-      <div class="container col-12 col-sm-4 mb-3">
-        <div class="bg-transparent clear-dark-blur d-flex flex-column align-items-center">
+      <div class="container col-12 col-sm-4 mb-5">
+        <div class="bg-transparent  d-flex flex-column align-items-center">
           <img src="https://placehold.co/400" alt="" class="card-image w-75 mb-2">
-          <div class="card-body text-center">
+          <div class="card-body text-center text-white text-shadow">
             <h3 class="card-title saira-stencil-one-regular">Service Two</h3>
             <p class="card-text saira-stencil-one-regular">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam consequatur odit ipsum recusandae quis temporibus.
@@ -56,9 +56,9 @@
       </div>
 
       <div class="container col-12 col-sm-4 mb-3">
-        <div class="bg-transparent clear-dark-blur d-flex flex-column align-items-center">
+        <div class="bg-transparent  d-flex flex-column align-items-center">
           <img src="https://placehold.co/400" alt="" class="card-image w-75 mb-2">
-          <div class="card-body text-center">
+          <div class="card-body text-center text-white text-shadow">
             <h3 class="card-title saira-stencil-one-regular">Service Three</h3>
             <p class="card-text saira-stencil-one-regular">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam consequatur odit ipsum recusandae quis temporibus.
@@ -68,13 +68,26 @@
       </div>
 
     </div>
+
+    <!-- Services Details Navigation -->
+    <div class="row justify-content-center flex-column align-items-center py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <h1 class="rubik-dirt-regular text-center display-3 mb-5 text-shadow-light">
+          See what <em><span class="text-white text-shadow">we</span></em> can do for <em><span class="text-white text-shadow">you.</span></em>
+        </h1>
+        <div class="container d-flex justify-content-center text-nowrap">
+          <%= link_to "Service Details", pages_path, class: "btn btn-lg btn-warning shadow fs-2 saira-stencil-one-regular cta-btn-lg px-4" %>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section id="about" class="content-section">
-  <div class="container-fluid py-5">
-    <div class="row blur py-3 justify-content-center">
+<section id="about" class="py-5">
+  <div class="container-fluid py-5 blur">
 
+    <div class="row py-5 justify-content-center">
       <div class="col-12 col-sm-5 col-md-4 col-xl-3">
         <%= image_tag "about-us.jpg", class: "img-fluid" %>
       </div>
@@ -90,7 +103,107 @@
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="container pt-5 border-top border-2 mt-3">
+      <h1 class=" text-white text-center rubik-dirt-regular">
+        Check out our recent jobs.
+      </h1>
+    </div>
+
+    <div class="row flex-wrap justify-content-center py-3">
+        <%= image_tag "https://placehold.co/400", class: " gallery-img p-1" %>
+        <%= image_tag "https://placehold.co/400", class: " gallery-img p-1" %>
+        <%= image_tag "https://placehold.co/400", class: " gallery-img p-1" %>
+    </div>
+
+    <div class="container d-flex justify-content-center text-nowrap">
+      <%= link_to "See More", pages_path, class: "btn btn-warning shadow fs-5 saira-stencil-one-regular cta-btn" %>
+    </div>
+  </div>
+</section>
+<section id="testimonials" class="py-5">
+  <div class="container-fluid">
+    <div class="container">
+      <h1 class="display-3 rubik-dirt-regular text-center text-shadow text-white mb-5">
+        Our clients say it best.
+      </h1>
+    </div>
+    <div class="row justify-content-center">
+      <div id="carouselTestimonials" class= "col col-md-10 carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                <%= image_tag "https://i.pravatar.cc/200", class: "avatar" %>
+                <div class="py-5 testimonial">
+                  <figure class="text-center">
+                    <blockquote class="blockquote">
+                      <p class="card-text text-white">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam facilis eligendi itaque quos neque earum exercitationem veritatis voluptatem tenetur dolorem!
+                      </p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Monroe homeowner, <cite title="Source Title">John Doe</cite>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <div class="d-flex flex-column align-items-center justify-content-center">
+                <%= image_tag "https://i.pravatar.cc/200", class: "avatar" %>
+                <div class="py-5 testimonial">
+                  <figure class="text-center">
+                    <blockquote class="blockquote">
+                      <p class="card-text text-white">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam facilis eligendi itaque quos neque earum exercitationem veritatis voluptatem tenetur dolorem!
+                      </p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Monroe homeowner, <cite title="Source Title">John Doe</cite>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                <%= image_tag "https://i.pravatar.cc/200", class: "avatar" %>
+                <div class="py-5 testimonial">
+                  <figure class="text-center">
+                    <blockquote class="blockquote">
+                      <p class="card-text text-white">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam facilis eligendi itaque quos neque earum exercitationem veritatis voluptatem tenetur dolorem!
+                      </p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Monroe homeowner, <cite title="Source Title">John Doe</cite>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
     </div>
   </div>
 </section>

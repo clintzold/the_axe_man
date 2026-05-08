@@ -29,11 +29,51 @@ navbar, .footer-container {
 }
 
 .content-section {
-  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 1000px;
 }
 
 .hero-logo {
   width: clamp(20vw, 300px, 50vw);
+}
+
+figure {
+  text-shadow: 1px 2px 8px rgba(0, 0, 0);
+  font-weight: bold;
+}
+
+figcaption {
+  color: rgba(235, 235, 235) !important;
+  font-weight: bold;
+}
+
+.testimonial {
+  width: clamp(20vw, 500px, 90vw);
+}
+
+blockquote {
+  font-family: "Saira Stencil One", sans-serif;
+}
+
+.text-shadow {
+  text-shadow: 1px 2px 8px rgba(0, 0, 0);
+}
+
+.text-shadow-light {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* IMAGES */
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.gallery-img {
+  width: clamp(20vw, 400px, 100vw);
 }
 
 /* BUTTONS */
@@ -43,6 +83,13 @@ navbar, .footer-container {
   corner-shape: bevel;
   border: none;
 }
+
+.cta-btn-lg {
+  border-radius: 20px 0 20px 0;
+  corner-shape: bevel;
+  border: none;
+}
+
 
 /* BREAK POINTS */
 @media (max-width: 768px) {
