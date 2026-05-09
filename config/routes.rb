@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :pages, only: [:index]
+  get "home", to: "pages#index", as: :home
   get "services", to: "pages#services", as: :services
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
