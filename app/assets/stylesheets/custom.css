@@ -1,12 +1,28 @@
 .home-bg {
   top: 0;
-  left: 0;
-  width: 100vw;
+  left: -12%;
+  width: 125vw;
   height: 100lvh;
   z-index: -1;
   position: fixed;
   background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3)),
               url('axe-stump.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.services-bg {
+  top: 0;
+  left: -12%;
+  width: 125vw;
+  height: 100lvh;
+  z-index: -1;
+  position: fixed;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3)),
+              url('stihl-chainsaw.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;

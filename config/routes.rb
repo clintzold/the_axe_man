@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "admin/index"
+  get "jobs/index"
   get "home", to: "pages#index", as: :home
   get "services", to: "pages#services", as: :services
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

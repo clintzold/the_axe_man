@@ -6,9 +6,9 @@ class PagesController < ApplicationController
   def services
   end
 
-  def mission
+  def about
   end
 
-  def jobs
+  def recent
   end
 end
