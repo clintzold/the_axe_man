@@ -1,2 +1,145 @@
-<h1>Jobs#index</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
+<%= content_for :background_image do %>
+  <div class="home-bg"></div>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row hero-section align-items-center">
+    <aside class="col"></aside>
+    <main class="col-12 col-sm-10 col-md-8">
+      <h1 class="rubik-dirt-regular display-1 text-shadow-light">
+        Talk is cheap. <span class="text-white">Our work speaks for itself.</span>
+      </h1>
+    </main>
+    <aside class="col"></aside>
+  </div>
+</div>
+
+<div class="container-fluid blur py-5">
+  <div class="row py-3 justify-content-center flex-wrap-reverse">
+    <!-- Secondary Image Gallery -->
+    <aside class="col-12 col-md-3">
+      <div class="mb-2">
+        <%= link_to "#" do %>
+            <%= image_tag "landscape-corner-house.jpg", class: "img-fluid" %>
+        <% end %>
+      </div>
+      <div class="mb-2">
+        <%= link_to "#" do %>
+            <%= image_tag "landscape-corner-house.jpg", class: "img-fluid" %>
+        <% end %>
+      </div>
+      <div class="">
+        <%= link_to "#" do %>
+            <%= image_tag "landscape-corner-house.jpg", class: "img-fluid" %>
+        <% end %>
+      </div>
+    </aside>
+    <!-- Image Carousel and Job Description -->
+    <main class="col-12 col-md-10 col-lg-7 p-0">
+      <div class="card bg-transparent border-0 rounded-0">
+
+        <div id="carouselJobs" class= "carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <%= image_tag "landscape-corner-house.jpg", class: "img-fluid card-img rounded-0" %>
+            </div>
+
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselJobs" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselJobs" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+        </div>
+        <div class="card-body text-white text-shadow-light">
+          <p class="rubik-mono-one-regular">Location: 
+          <span class="saira-stencil-one-regular opacity-75">Monroe, Michigan</span>
+          </p>
+          <p  class="rubik-mono-one-regular">
+          Description of work:<br>
+          <span class="saira-stencil-one-regular opacity-75">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam error repudiandae dolorum quae sit accusantium aspernatur omnis perspiciatis, delectus veniam? Fugit tenetur praesentium eos? Earum.
+          </span>
+          </p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Separator -->
+  <div class="container border-bottom py-3"></div>
+
+  <div class="row py-5 justify-content-center flex-wrap-reverse">
+    <!-- Secondary Image Gallery -->
+    <aside class="col-12 col-md-3">
+      <div class="mb-2">
+        <%= link_to "#" do %>
+            <%= image_tag "landscape-corner-house.jpg", class: "img-fluid" %>
+        <% end %>
+      </div>
+      <div class="mb-2">
+        <%= link_to "#" do %>
+            <%= image_tag "landscape-corner-house.jpg", class: "img-fluid" %>
+        <% end %>
+      </div>
+      <div class="">
+        <%= link_to "#" do %>
+            <%= image_tag "landscape-corner-house.jpg", class: "img-fluid" %>
+        <% end %>
+      </div>
+    </aside>
+    <!-- Image Carousel and Job Description -->
+    <main class="col-12 col-md-10 col-lg-7 p-0">
+      <div class="card bg-transparent border-0 rounded-0">
+
+        <div id="carouselJobs" class= "carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <%= image_tag "landscape-corner-house.jpg", class: "img-fluid card-img rounded-0" %>
+            </div>
+
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselJobs" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselJobs" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+        </div>
+        <div class="card-body text-white text-shadow-light">
+          <p class="rubik-mono-one-regular">Location: 
+          <span class="saira-stencil-one-regular opacity-75">Monroe, Michigan</span>
+          </p>
+          <p  class="rubik-mono-one-regular">
+          Description of work:<br>
+          <span class="saira-stencil-one-regular opacity-75">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam error repudiandae dolorum quae sit accusantium aspernatur omnis perspiciatis, delectus veniam? Fugit tenetur praesentium eos? Earum.
+          </span>
+          </p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Separator -->
+  <div class="container border-bottom py-3"></div>
+
+
+    <div class="container d-flex flex-column align-items-center pt-3">
+      <h3 class="rubik-dirt-regular text-center pt-3 mb-3">
+        Have Questions?<span class="text-white"> Just call.</span>
+      </h3>
+      <%= link_to "Call Today", "tel:+17052740375", class: "btn btn-warning shadow px-4 cta-btn-lg saira-stencil-one-regular fs-5" %>
+    </div>
+</div>
