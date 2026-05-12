@@ -108,6 +108,15 @@ blockquote {
   corner-shape: bevel;
 }
 
+.about-details-img {
+  width: 25%;
+}
+
+@media (max-width: 480px) {
+  .about-details-img {
+    width: 35%;
+  }
+}
 /* BUTTONS */
 
 .cta-btn {
