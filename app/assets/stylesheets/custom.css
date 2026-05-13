@@ -56,6 +56,17 @@ navbar, .footer-container {
   min-height: 1000px;
 }
 
+.login-section {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  width: clamp(25vw, 400px, 95vw);
+}
+
 .hero-logo {
   width: clamp(20vw, 300px, 50vw);
 }

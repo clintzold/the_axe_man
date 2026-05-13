@@ -10,6 +10,4 @@ class PagesController < ApplicationController
   def about
   end
 
-  def recent
-  end
 end
