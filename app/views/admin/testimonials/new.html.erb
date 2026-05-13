@@ -1,0 +1,11 @@
+<% content_for :title, "New testimonial" %>
+
+<h1>New testimonial</h1>
+
+<%= render "form", admin_testimonial: @admin_testimonial %>
+
+<br>
+
+<div>
+  <%= link_to "Back to testimonials", admin_testimonials_path %>
+</div>

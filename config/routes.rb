@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   namespace :admin do
+    resources :testimonials
     resources :jobs
     root to: "dashboard#index", as: :dashboard
   end

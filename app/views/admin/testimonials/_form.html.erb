@@ -1,0 +1,37 @@
+<%= form_with(model: admin_testimonial) do |form| %>
+  <% if admin_testimonial.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(admin_testimonial.errors.count, "error") %> prohibited this admin_testimonial from being saved:</h2>
+
+      <ul>
+        <% admin_testimonial.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :location, style: "display: block" %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div>
+    <%= form.label :testimony, style: "display: block" %>
+    <%= form.textarea :testimony %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

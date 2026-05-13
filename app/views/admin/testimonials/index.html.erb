@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Testimonials" %>
+
+<h1>Testimonials</h1>
+
+<div id="admin_testimonials">
+  <% @admin_testimonials.each do |admin_testimonial| %>
+    <%= render admin_testimonial %>
+    <p>
+      <%= link_to "Show this testimonial", admin_testimonial %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New testimonial", new_admin_testimonial_path %>
