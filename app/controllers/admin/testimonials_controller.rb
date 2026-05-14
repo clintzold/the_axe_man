@@ -1,18 +1,14 @@
 class Admin::TestimonialsController < Admin::BaseController
-  before_action :set_admin_testimonial, only: %i[ show edit update destroy ]
+  before_action :set_testimonial, only: %i[ show edit update destroy ]
 
   # GET /admin/testimonials or /admin/testimonials.json
   def index
-    @admin_testimonials = Admin::Testimonial.all
-  end
-
-  # GET /admin/testimonials/1 or /admin/testimonials/1.json
-  def show
+    @testimonials = Testimonial.includes(image_attachment: { blob: :variant_records} ).order(created_at: :desc)
   end
 
   # GET /admin/testimonials/new
   def new
-    @admin_testimonial = Admin::Testimonial.new
+    @testimonial = Testimonial.new
   end
 
   # GET /admin/testimonials/1/edit
@@ -21,15 +17,15 @@ class Admin::TestimonialsController < Admin::BaseController
 
   # POST /admin/testimonials or /admin/testimonials.json
   def create
-    @admin_testimonial = Admin::Testimonial.new(admin_testimonial_params)
+    @testimonial = Testimonial.new(testimonial_params)
 
     respond_to do |format|
-      if @admin_testimonial.save
-        format.html { redirect_to @admin_testimonial, notice: "Testimonial was successfully created." }
-        format.json { render :show, status: :created, location: @admin_testimonial }
+      if @testimonial.save
+        format.html { redirect_to admin_testimonials_path, notice: "Testimonial was successfully created." }
+        format.json { render :show, status: :created, location: @testimonial }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @admin_testimonial.errors, status: :unprocessable_entity }
+        format.json { render json: testimonial.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -37,19 +33,19 @@ class Admin::TestimonialsController < Admin::BaseController
   # PATCH/PUT /admin/testimonials/1 or /admin/testimonials/1.json
   def update
     respond_to do |format|
-      if @admin_testimonial.update(admin_testimonial_params)
-        format.html { redirect_to @admin_testimonial, notice: "Testimonial was successfully updated.", status: :see_other }
-        format.json { render :show, status: :ok, location: @admin_testimonial }
+      if @testimonial.update(testimonial_params)
+        format.html { redirect_to admin_testimonial_path(@testimonial), notice: "Testimonial was successfully updated.", status: :see_other }
+        format.json { render :show, status: :ok, location: @testimonial }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @admin_testimonial.errors, status: :unprocessable_entity }
+        format.json { render json: testimonial.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /admin/testimonials/1 or /admin/testimonials/1.json
   def destroy
-    @admin_testimonial.destroy!
+    @testimonial.destroy!
 
     respond_to do |format|
       format.html { redirect_to admin_testimonials_path, notice: "Testimonial was successfully destroyed.", status: :see_other }
@@ -59,12 +55,12 @@ class Admin::TestimonialsController < Admin::BaseController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_admin_testimonial
-      @admin_testimonial = Admin::Testimonial.find(params.expect(:id))
+    def set_testimonial
+      @testimonial = Testimonial.find(params.expect(:id))
     end
 
     # Only allow a list of trusted parameters through.
-    def admin_testimonial_params
-      params.expect(admin_testimonial: [ :name, :description, :location, :testimony, :image ])
+    def testimonial_params
+      params.expect(testimonial: [ :name, :client_type, :location, :testimony, :image ])
     end
 end

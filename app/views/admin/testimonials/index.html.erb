@@ -1,16 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<p  class="text-center saira-stencil-one-regular text-warning text-shadow-light fs-4 my-3"><%= notice %></p>
 
 <% content_for :title, "Testimonials" %>
 
-<h1>Testimonials</h1>
+<h1 class="rubik-dirt-regular display-3 text-center text-white">Testimonials</h1>
 
-<div id="admin_testimonials">
-  <% @admin_testimonials.each do |admin_testimonial| %>
-    <%= render admin_testimonial %>
-    <p>
-      <%= link_to "Show this testimonial", admin_testimonial %>
-    </p>
-  <% end %>
-</div>
+<% @testimonials.each do |testimonial| %>
+  <%= render testimonial %>
+<% end %>
 
-<%= link_to "New testimonial", new_admin_testimonial_path %>
+<%= link_to new_admin_testimonial_path, class: "link-light link-opacity-75-hover text-shadow" do %>
+
+  <i class="bi bi-person-fill-add fixed-icon-link"></i>
+
+<% end %>

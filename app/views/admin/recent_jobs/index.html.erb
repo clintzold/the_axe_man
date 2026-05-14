@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Recent jobs" %>
+
+<h1>Recent jobs</h1>
+
+<div id="admin_recent_jobs">
+  <% @admin_recent_jobs.each do |admin_recent_job| %>
+    <%= render admin_recent_job %>
+    <p>
+      <%= link_to "Show this recent job", admin_recent_job %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New recent job", new_admin_recent_job_path %>

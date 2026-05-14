@@ -1,10 +1,4 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @admin_testimonial %>
+<%= render "testimonial" testimonial: @testimonial %>
 
-<div>
-  <%= link_to "Edit this testimonial", edit_admin_testimonial_path(@admin_testimonial) %> |
-  <%= link_to "Back to testimonials", admin_testimonials_path %>
-
-  <%= button_to "Destroy this testimonial", @admin_testimonial, method: :delete %>
-</div>

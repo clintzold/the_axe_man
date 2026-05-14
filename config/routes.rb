@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :testimonials
+    resources :recent_jobs
+    resources :testimonials, except: [ :show ]
     resources :jobs
+    # Image Control
+    get "blobs/:name", to: "blobs#destroy_orphan_image"
     root to: "dashboard#index", as: :dashboard
   end
   resource :session

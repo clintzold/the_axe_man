@@ -1,0 +1,11 @@
+<% content_for :title, "New recent job" %>
+
+<h1>New recent job</h1>
+
+<%= render "form", admin_recent_job: @admin_recent_job %>
+
+<br>
+
+<div>
+  <%= link_to "Back to recent jobs", admin_recent_jobs_path %>
+</div>

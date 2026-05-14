@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @admin_recent_job %>
+
+<div>
+  <%= link_to "Edit this recent job", edit_admin_recent_job_path(@admin_recent_job) %> |
+  <%= link_to "Back to recent jobs", admin_recent_jobs_path %>
+
+  <%= button_to "Destroy this recent job", @admin_recent_job, method: :delete %>
+</div>

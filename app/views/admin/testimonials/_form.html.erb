@@ -1,9 +1,9 @@
-<%= form_with(model: admin_testimonial) do |form| %>
-  <% if admin_testimonial.errors.any? %>
+<%= form_with(model: testimonial, url: admin_testimonials_path) do |form| %>
+  <% if testimonial.errors.any? %>
     <div style="color: red">
 
       <ul>
-        <% admin_testimonial.errors.each do |error| %>
+        <% testimonial.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -15,14 +15,25 @@
     <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
+  <div data-controller="previews">
     <%= form.label :image, style: "display: block", class: "saira-stencil-one-regular text-white" %>
-    <%= form.file_field :image, accept: "image/*", class: "form-control" %>
+    <%= form.file_field :image,
+      accept: "image/*",
+      class: "form-control",
+      direct_upload: true,
+      data: { previews_target: "input", action: "change->previews#preview"} %>
+
+    <div class="my-1 d-flex" data-previews-target="previewContainer">
+      <% if testimonial.image.attached? %>
+        <%= image_tag testimonial.image.variant(:avatar), style: "width: 150px" %>
+      <% end %>
+    </div>
+
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block", class: "saira-stencil-one-regular text-white" %>
-    <%= form.text_field :description, class: "form-control" %>
+    <%= form.label :client_type, style: "display: block", class: "saira-stencil-one-regular text-white" %>
+    <%= form.text_field :client_type, class: "form-control" %>
   </div>
 
   <div>
