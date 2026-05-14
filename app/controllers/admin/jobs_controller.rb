@@ -1,4 +1,4 @@
-class Admin::JobsController < ApplicationController
+class Admin::JobsController < Admin::BaseController
   before_action :set_admin_job, only: %i[ show edit update destroy ]
 
   # GET /admin/jobs or /admin/jobs.json

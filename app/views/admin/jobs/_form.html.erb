@@ -12,13 +12,23 @@
   <% end %>
 
   <div>
-    <%= form.label :location, style: "display: block" %>
+    <%= form.label :location, style: "display: block", class: "saira-stencil-one-regular" %>
     <%= form.text_field :location %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :description, style: "display: block", class: "saira-stencil-one-regular" %>
     <%= form.textarea :description %>
+  </div>
+
+  <div>
+    <%= form.label :main_image, style: "display: block", class: "saira-stencil-one-regular" %>
+    <%= form.file_field :main_image, class: "form-control", accept: 'image/*' %>
+  </div>
+
+  <div>
+    <%= form.label :images, style: "display: block", class: "saira-stencil-one-regular" %>
+    <%= form.file_field :images, class: "form-control", accept: 'image/*', multiple: true %>
   </div>
 
   <div>
