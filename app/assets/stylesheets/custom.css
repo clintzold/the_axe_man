@@ -67,6 +67,10 @@ navbar, .footer-container {
   width: clamp(25vw, 400px, 95vw);
 }
 
+.dashboard-section {
+  min-height: 90vh;
+}
+
 .dashboard-card .card-body {
   height: 400px;
 }
