@@ -1,5 +1,5 @@
-class RecentJobsController < ApplicationController
-  before_action :set_admin_recent_job, only: %i[ show edit update destroy ]
+class Admin::RecentJobsController < Admin::BaseController
+  before_action :set_recent_job, only: %i[ show edit update destroy ]
 
   # GET /admin/recent_jobs or /admin/recent_jobs.json
   def index

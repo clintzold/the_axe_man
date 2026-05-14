@@ -1,5 +1,5 @@
 <%= form_with(model: recent_job, url: admin_recent_jobs_path) do |form| %>
-  <% if admin_recent_job.errors.any? %>
+  <% if recent_job.errors.any? %>
     <div style="color: red">
       <ul>
         <% recent_job.errors.each do |error| %>
@@ -18,24 +18,29 @@
       data: { previews_target: "input", action: "change->previews#preview"} %>
 
     <div class="my-1 d-flex" data-previews-target="previewContainer">
-      <% if recent_job.image.attached? %>
-        <%= image_tag testimonial.image.variant(:thumb), style: "width: 150px" %>
+      <% if recent_job.main_image.attached? %>
+        <%= image_tag testimonial.main_image.variant(:thumb), style: "width: 150px" %>
       <% end %>
     </div>
 
   </div>
 
   <div>
-    <%= form.label :location, style: "display: block" %>
-    <%= form.text_field :location %>
+    <%= form.label :images, style: "display: block", class: "saira-stencil-one-regular text-white" %>
+    <%= form.file_field :images, class: "form-control", accept: 'image/*', multiple: true %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.textarea :description %>
+    <%= form.label :location, style: "display: block", class: "saira-stencil-one-regular text-white" %>
+    <%= form.text_field :location, required: true, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.label :description, style: "display: block", class: "saira-stencil-one-regular text-white" %>
+    <%= form.textarea :description, required: true, class: "form-control" %>
+  </div>
+
+  <div class="mt-3">
+    <%= form.submit "Create Job", class: "saira-stencil-one-regular btn btn-warning cta-btn" %>
   </div>
 <% end %>
