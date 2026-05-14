@@ -67,6 +67,14 @@ navbar, .footer-container {
   width: clamp(25vw, 400px, 95vw);
 }
 
+.dashboard-card .card-body {
+  height: 400px;
+}
+
+.dashboard-card-link i {
+  font-size: 4em;
+}
+
 .hero-logo {
   width: clamp(20vw, 300px, 50vw);
 }
