@@ -65,6 +65,6 @@ class Admin::TestimonialsController < Admin::BaseController
 
     # Only allow a list of trusted parameters through.
     def admin_testimonial_params
-      params.expect(admin_testimonial: [ :name, :description, :location, :testimony ])
+      params.expect(admin_testimonial: [ :name, :description, :location, :testimony, :image ])
     end
 end

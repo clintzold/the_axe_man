@@ -9,7 +9,7 @@ class Admin::Testimonial < ApplicationRecord
   private
 
   def image_attached?
-    unless .image.attached?
+    unless image.attached?
       errors.add(:image, "must be present")
     end
   end
