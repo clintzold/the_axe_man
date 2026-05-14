@@ -65,6 +65,6 @@ class Admin::JobsController < Admin::BaseController
 
     # Only allow a list of trusted parameters through.
     def admin_job_params
-      params.expect(admin_job: [ :location, :description ])
+      params.expect(admin_job: [ :location, :description, :main_image, images: [] ])
     end
 end

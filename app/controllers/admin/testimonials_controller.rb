@@ -1,4 +1,4 @@
-class Admin::TestimonialsController < ApplicationController
+class Admin::TestimonialsController < Admin::BaseController
   before_action :set_admin_testimonial, only: %i[ show edit update destroy ]
 
   # GET /admin/testimonials or /admin/testimonials.json

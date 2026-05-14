@@ -1,11 +1,24 @@
 <% content_for :title, "New testimonial" %>
 
-<h1>New testimonial</h1>
+<div class="dashboard-section d-flex align-items-center">
+  <div class="container-fluid">
+    <div class="row">
+      <aside class="col"></aside>
 
-<%= render "form", admin_testimonial: @admin_testimonial %>
+      <main class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 p-3 blur">
+        <h1 class="saira-stencil-one-regular text-white">New Testimonial</h1>
 
-<br>
+        <%= render "form", admin_testimonial: @admin_testimonial %>
 
-<div>
-  <%= link_to "Back to testimonials", admin_testimonials_path %>
+        <br>
+
+        <div>
+          <%= link_to "Back to testimonials", admin_testimonials_path, class: "link-light" %>
+        </div>
+      </main>
+      <div class="col"></div>
+
+    </div>
+  </div>
 </div>
+
