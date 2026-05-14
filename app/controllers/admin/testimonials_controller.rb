@@ -34,7 +34,7 @@ class Admin::TestimonialsController < Admin::BaseController
   def update
     respond_to do |format|
       if @testimonial.update(testimonial_params)
-        format.html { redirect_to admin_testimonial_path(@testimonial), notice: "Testimonial was successfully updated.", status: :see_other }
+        format.html { redirect_to admin_testimonials_path, notice: "Testimonial was successfully updated.", status: :see_other }
         format.json { render :show, status: :ok, location: @testimonial }
       else
         format.html { render :edit, status: :unprocessable_entity }

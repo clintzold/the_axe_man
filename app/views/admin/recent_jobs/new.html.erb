@@ -1,11 +1,24 @@
 <% content_for :title, "New recent job" %>
 
-<h1>New recent job</h1>
+<div class="dashboard-section d-flex align-items-center">
+  <div class="container-fluid">
+    <div class="row">
+      <aside class="col"></aside>
 
-<%= render "form", admin_recent_job: @admin_recent_job %>
+      <main class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 p-3 blur">
+        <h1 class="saira-stencil-one-regular text-white">New Job</h1>
 
-<br>
+        <%= render "form", testimonial: @testimonial %>
 
-<div>
-  <%= link_to "Back to recent jobs", admin_recent_jobs_path %>
+        <br>
+
+        <div>
+          <%= link_to "Back to dashboard", admin_dashboard_path, class: "link-light" %>
+        </div>
+      </main>
+      <div class="col"></div>
+
+    </div>
+  </div>
 </div>
+

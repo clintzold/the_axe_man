@@ -1,15 +1,29 @@
-<%= form_with(model: admin_recent_job) do |form| %>
+<%= form_with(model: recent_job, url: admin_recent_jobs_path) do |form| %>
   <% if admin_recent_job.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(admin_recent_job.errors.count, "error") %> prohibited this admin_recent_job from being saved:</h2>
-
       <ul>
-        <% admin_recent_job.errors.each do |error| %>
+        <% recent_job.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
+
+  <div data-controller="previews">
+    <%= form.label :main_image, style: "display: block", class: "saira-stencil-one-regular text-white" %>
+    <%= form.file_field :main_image,
+      accept: "image/*",
+      class: "form-control",
+      direct_upload: true,
+      data: { previews_target: "input", action: "change->previews#preview"} %>
+
+    <div class="my-1 d-flex" data-previews-target="previewContainer">
+      <% if recent_job.image.attached? %>
+        <%= image_tag testimonial.image.variant(:thumb), style: "width: 150px" %>
+      <% end %>
+    </div>
+
+  </div>
 
   <div>
     <%= form.label :location, style: "display: block" %>
