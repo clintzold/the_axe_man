@@ -84,7 +84,6 @@ navbar, .footer-container {
 }
 
 figure {
-  text-shadow: 1px 2px 8px rgba(0, 0, 0);
   font-weight: bold;
 }
 
@@ -94,7 +93,6 @@ figcaption {
 }
 
 .testimonial {
-  width: clamp(20vw, 500px, 90vw);
 }
 
 blockquote {
@@ -111,6 +109,10 @@ blockquote {
 
 .icon-container {
   width: 33%;
+}
+
+.admin-testimonial-card {
+  height: 450px;
 }
 
 

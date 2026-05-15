@@ -12,11 +12,13 @@ class Admin::RecentJobsController < Admin::BaseController
 
   # GET /admin/recent_jobs/new
   def new
+    @path = admin_recent_jobs_path
     @recent_job = RecentJob.new
   end
 
   # GET /admin/recent_jobs/1/edit
   def edit
+    @path = admin_recent_job_path(@job)
   end
 
   # POST /admin/recent_jobs or /admin/recent_jobs.json

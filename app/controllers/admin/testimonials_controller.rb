@@ -8,11 +8,13 @@ class Admin::TestimonialsController < Admin::BaseController
 
   # GET /admin/testimonials/new
   def new
+    @path = admin_testimonials_path
     @testimonial = Testimonial.new
   end
 
   # GET /admin/testimonials/1/edit
   def edit
+    @path = admin_testimonial_path(@testimonial)
   end
 
   # POST /admin/testimonials or /admin/testimonials.json

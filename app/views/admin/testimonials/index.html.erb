@@ -4,12 +4,22 @@
 
 <h1 class="rubik-dirt-regular display-3 text-center text-white">Testimonials</h1>
 
-<% @testimonials.each do |testimonial| %>
-  <%= render testimonial %>
-<% end %>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <% @testimonials.each do |testimonial| %>
+      <%= render testimonial %>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to new_admin_testimonial_path, class: "link-light link-opacity-75-hover text-shadow" do %>
 
   <i class="bi bi-person-fill-add fixed-icon-link"></i>
+
+<% end %>
+
+<%= link_to new_admin_testimonial_path, class: "link-light link-opacity-75-hover text-shadow" do %>
+
+  <i class="bi bi-arrow-left-square fixed-icon-link-back"></i>
 
 <% end %>
