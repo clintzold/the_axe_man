@@ -1,0 +1,14 @@
+<div class="d-flex gap-2">
+  <% if recent_job.images.attached? %>
+    <% recent_job.images.each do |image| %>
+      <div class="image-container">
+        <%= link_to admin_remove_recent_job_image_path(recent_job, image),
+          class: "remove-image-button text-white opacity-75",
+          data: { turbo_stream: true } do %>
+          <i class="bi bi-x-square-fill"></i>
+        <% end %>
+        <%= image_tag image.variant(:thumb), data: { previews_target: "previewContainer" } %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

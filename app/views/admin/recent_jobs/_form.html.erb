@@ -19,15 +19,36 @@
 
     <div class="my-1 d-flex" data-previews-target="previewContainer">
       <% if recent_job.main_image.attached? %>
-        <%= image_tag testimonial.main_image.variant(:thumb), style: "width: 150px" %>
+        <%= image_tag recent_job.main_image.variant(:thumb), style: "width: 150px" %>
       <% end %>
     </div>
 
   </div>
 
-  <div>
-    <%= form.label :images, style: "display: block", class: "saira-stencil-one-regular text-white" %>
-    <%= form.file_field :images, class: "form-control", accept: 'image/*', multiple: true %>
+  <div class="mb-1" data-controller="previews">
+    <%= form.label :images, class: "form-label saira-stencil-one-regular text-white" %>
+    <%= form.file_field :images, accept: 'image/*', multiple: true, class: "form-control", data: { previews_target: "input", action: "change->previews#preview" } %>
+
+    <div class="d-flex mt-2 flex-wrap gap-2">
+      <div class="d-flex flex-wrap gap-2" data-previews-target="previewContainer">
+      </div>
+        <%= turbo_frame_tag "images" do %>
+          <div class="d-flex flex-wrap gap-2">
+          <% if recent_job.images.attached? %>
+              <% recent_job.images.each do |image| %>
+                <div class="image-container">
+                  <%= link_to admin_remove_recent_job_image_path(recent_job, image),
+                    class: "remove-image-button text-white fs-5 opacity-75",
+                    data: { turbo_stream: true } do %>
+                    <i class="bi bi-x-square-fill"></i>
+                  <% end %>
+                  <%= image_tag image.variant(:thumb), data: { previews_target: "previewContainer" } %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
   </div>
 
   <div>

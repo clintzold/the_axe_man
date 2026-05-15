@@ -3,7 +3,7 @@ class Admin::RecentJobsController < Admin::BaseController
 
   # GET /admin/recent_jobs or /admin/recent_jobs.json
   def index
-    @recent_jobs = RecentJob.all
+    @recent_jobs = RecentJob.includes(main_image_attachment: {blob: :variant_records}, images_attachments: {blob: :variant_records}).order(created_at: :desc)
   end
 
   # GET /admin/recent_jobs/1 or /admin/recent_jobs/1.json
@@ -25,7 +25,7 @@ class Admin::RecentJobsController < Admin::BaseController
 
     respond_to do |format|
       if @recent_job.save
-        format.html { redirect_to @recent_job, notice: "Recent job was successfully created." }
+        format.html { redirect_to admin_recent_jobs_path, notice: "Recent job was successfully created." }
         format.json { render :show, status: :created, location: @recent_job }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -37,14 +37,25 @@ class Admin::RecentJobsController < Admin::BaseController
   # PATCH/PUT /admin/recent_jobs/1 or /admin/recent_jobs/1.json
   def update
     respond_to do |format|
-      if @recent_job.update(recent_job_params)
-        format.html { redirect_to admin_recent_job_path(@recent_job), notice: "Recent job was successfully updated.", status: :see_other }
+      @recent_job.images.attach images_params[:images].compact_blank!
+      if @recent_job.update(recent_job_update_params)
+        format.html { redirect_to admin_recent_jobs_path, notice: "Recent job was successfully updated.", status: :see_other }
         format.json { render :show, status: :ok, location: @recent_job }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @recent_job.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def remove_image
+    @form = params[:form]
+    @recent_job = RecentJob.find(params[:job_id])
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge_later
+    render turbo_stream: turbo_stream.update(
+      "images", partial: "images", locals: { recent_job: @recent_job}
+    )
   end
 
   # DELETE /admin/recent_jobs/1 or /admin/recent_jobs/1.json
@@ -65,6 +76,14 @@ class Admin::RecentJobsController < Admin::BaseController
 
     # Only allow a list of trusted parameters through.
     def recent_job_params
-      params.expect(admin_recent_job: [ :location, :description ])
+      params.expect(recent_job: [ :location, :description, :main_image, images: [] ])
+    end
+
+    def recent_job_update_params
+      params.expect(recent_job: [ :location, :description, :main_image ])
+    end
+
+    def images_params
+      params.expect(recent_job: [ images:[] ])
     end
 end

@@ -2,15 +2,13 @@
 
 <% content_for :title, "Recent jobs" %>
 
-<h1>Recent jobs</h1>
+<h1 class="rubik-dirt-regular text-white text-shadow-light text-center display-3">Recent jobs</h1>
 
-<div id="admin_recent_jobs">
-  <% @admin_recent_jobs.each do |admin_recent_job| %>
-    <%= render admin_recent_job %>
-    <p>
-      <%= link_to "Show this recent job", admin_recent_job %>
-    </p>
-  <% end %>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+      <% @recent_jobs.each do |recent_job| %>
+        <%= render recent_job %>
+      <% end %>
+  </div>
 </div>
 
-<%= link_to "New recent job", new_admin_recent_job_path %>
