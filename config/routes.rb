@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     get "recent_jobs/:job_id/images/:id", to: "recent_jobs#remove_image", as: :remove_recent_job_image
     resources :recent_jobs
     resources :testimonials, except: [ :show ]
-    resources :jobs
     # Image Control
     get "blobs/:name", to: "blobs#destroy_orphan_image"
     root to: "dashboard#index", as: :dashboard
