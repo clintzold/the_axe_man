@@ -1,20 +1,49 @@
-<div class="card blur col-12 col-sm-8 col-md-6 col-xl-4">
-  <div class="card-body">
+<div class="col-12 col-sm-8 col-md-6 col-xl-4 mb-4">
+  <div class="card blur rounded-0 border-0">
 
-    <div class="card-text saira-stencil-one-regular text-white">
-      <p><span class="fs-5">Location: </span><%= recent_job.location %></p>
-      <p><span class="fs-5">Description of work: </span><%= recent_job.description %></p>
+        <div id="carouselJob-<%= recent_job.id %>" class= "carousel slide">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                  <%= image_tag recent_job.main_image.variant(:large), class: "img-fluid carousel-image" %>
+            </div>
+
+            <% recent_job.images.each do |image| %>
+              <div class="carousel-item">
+                    <%= image_tag image.variant(:large), class: "img-fluid carousel-image" %>
+              </div>
+            <% end %>
+
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselJob-<%= recent_job.id %>" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselJob-<%= recent_job.id %>" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+        </div>
+
+    <div class="card-body">
+
+      <div class="card-text saira-stencil-one-regular text-white">
+        <p><span class="fs-5">Location: </span><%= recent_job.location %></p>
+        <p><span class="fs-5">Description of work: </span><%= recent_job.description %></p>
+      </div>
+
+      <div class="text-light border-top pt-3 w-100 d-flex justify-content-between show-controls align-items-start">
+        <%= link_to "Edit", edit_admin_recent_job_path(recent_job), class: "btn btn-warning cta-btn saira-stencil-one-regular" %>
+
+        <%= button_to "Destroy",
+          admin_recent_job_path(recent_job),
+          method: :delete,
+          form: { data: { turbo_confirm: "Are you sure you want to delete this testimonial?" }},
+          class: "saira-stencil-one-regular btn btn-danger cta-btn" %>
+      </div>
+
     </div>
-
-    <div class="text-light border-top pt-3 w-100 d-flex justify-content-between show-controls align-items-start">
-      <%= link_to "Edit", edit_admin_recent_job_path(recent_job), class: "btn btn-warning cta-btn saira-stencil-one-regular" %>
-
-      <%= button_to "Destroy",
-        admin_recent_job_path(recent_job),
-        method: :delete,
-        form: { data: { turbo_confirm: "Are you sure you want to delete this testimonial?" }},
-        class: "saira-stencil-one-regular btn btn-danger cta-btn" %>
-    </div>
-
   </div>
 </div>

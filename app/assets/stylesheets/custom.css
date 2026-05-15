@@ -117,6 +117,10 @@ blockquote {
 
 /* IMAGES */
 
+.carousel-image {
+  width: 100%;
+}
+
 .avatar {
   aspect-ratio: 1 / 1;
   width: clamp(10vw, 150px, 25vw);
