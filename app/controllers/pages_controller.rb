@@ -11,6 +11,10 @@ class PagesController < ApplicationController
   def about
   end
 
+  def work
+    @jobs = RecentJob.includes(main_image_attachment: { blob: :variant_records }, images_attachments: { blob: :variant_records })
+  end
+
   private
 
   def get_testimonials
