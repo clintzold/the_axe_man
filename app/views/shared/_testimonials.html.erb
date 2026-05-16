@@ -1,86 +1,83 @@
 <!-- Testimonals -->
-<section id="testimonials" class="py-5">
+<section id="testimonials" class="pb-5 pt-3">
   <div class="container-fluid py-5">
-    <div class="container">
+    <div class="container pb-3">
       <h1 class="rubik-dirt-regular display-4 text-center text-shadow-light text-white mb-5">
         Our clients say it best.
       </h1>
     </div>
     <div class="row justify-content-center">
-      <div id="carouselTestimonials" class= "col col-md-10 carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
 
-          <div class="carousel-item active">
-            <div class="container">
-              <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                <%= image_tag "https://i.pravatar.cc/200", class: "avatar" %>
-                <div class="pt-5 testimonial">
-                  <figure class="text-center">
-                    <blockquote class="blockquote">
-                      <p class="card-text text-white">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam facilis eligendi itaque quos neque earum exercitationem veritatis voluptatem tenetur dolorem!
+      <div class="col-12 col-sm-10 col-lg-8 col-xl-7 col-xxl-5">
+
+
+        <div id="carouselTestimonials" class= "carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            
+            <div class="carousel-item active">
+
+              <div class="d-flex flex-column align-items-center justify-content-center testimonial">
+                <% testimonial_first = testimonials.first %>
+                <%= image_tag testimonial_first.image.variant(:avatar), class: "avatar mb-5" %>
+
+                <div class="testimonial-text-container">
+                  <figure class="text-center text-shadow">
+                    <blockquote class="blockquote px-3">
+                      <p class="text-white">
+                        <%= testimonial_first.testimony %>
                       </p>
                     </blockquote>
                     <figcaption class="blockquote-footer">
-                      Monroe homeowner, <cite title="Source Title">John Doe</cite>
+                      <%= "#{testimonial_first.location} #{testimonial_first.client_type}" %>, <cite title="Source Title"><%= testimonial_first.name.titleize %></cite>
                     </figcaption>
                   </figure>
                 </div>
+
               </div>
+
             </div>
+
+            <% testimonials.offset(1).each do |testimonial| %>
+              <div class="carousel-item">
+
+                <div class="d-flex flex-column align-items-center justify-content-center testimonial">
+                  <%= image_tag testimonial.image.variant(:avatar), class: "avatar mb-5" %>
+
+                  <div class="testimonial-text-container">
+                    <figure class="text-center text-shadow">
+                      <blockquote class="blockquote px-3">
+                        <p class="text-white">
+                          <%= testimonial.testimony %>
+                        </p>
+                      </blockquote>
+                      <figcaption class="blockquote-footer">
+                        <%= "#{testimonial.location} #{testimonial.client_type}" %>, <cite title="Source Title"><%= testimonial.name.titleize %></cite>
+                      </figcaption>
+                    </figure>
+                  </div>
+
+                </div>
+
+              </div>
+            <% end %>
+
           </div>
 
-          <div class="carousel-item">
-            <div class="container">
-              <div class="d-flex flex-column align-items-center justify-content-center">
-                <%= image_tag "https://i.pravatar.cc/200", class: "avatar" %>
-                <div class="py-5 testimonial">
-                  <figure class="text-center">
-                    <blockquote class="blockquote">
-                      <p class="card-text text-white">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam facilis eligendi itaque quos neque earum exercitationem veritatis voluptatem tenetur dolorem!
-                      </p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                      Monroe homeowner, <cite title="Source Title">John Doe</cite>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-            </div>
-          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
 
-          <div class="carousel-item">
-            <div class="container">
-              <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                <%= image_tag "https://i.pravatar.cc/200", class: "avatar" %>
-                <div class="py-5 testimonial">
-                  <figure class="text-center">
-                    <blockquote class="blockquote">
-                      <p class="card-text text-white">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam facilis eligendi itaque quos neque earum exercitationem veritatis voluptatem tenetur dolorem!
-                      </p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                      Monroe homeowner, <cite title="Source Title">John Doe</cite>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
 
       </div>
+
     </div>
+
   </div>
 </section>

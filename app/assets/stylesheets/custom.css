@@ -115,6 +115,20 @@ blockquote {
   height: 450px;
 }
 
+.job-card-body {
+  height: 300px;
+}
+
+.testimonial-text-container {
+  width: 75%;
+}
+
+@media ( max-width: 480px ) {
+  .testimonial-text-container {
+    width: 100%;
+  }
+}
+
 
 
 /* IMAGES */

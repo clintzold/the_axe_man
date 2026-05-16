@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   allow_unauthenticated_access
+  before_action :get_testimonials
 
   def index
   end
@@ -10,4 +11,9 @@ class PagesController < ApplicationController
   def about
   end
 
+  private
+
+  def get_testimonials
+    @testimonials = Testimonial.includes( image_attachment: { blob: :variant_records})
+  end
 end
