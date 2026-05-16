@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="previews"
 export default class extends Controller {
-  static targets = ["input", "previewContainer"]	
+  static targets = ["input", "previewContainer", "fileField"]
 
   connect() {
   }
@@ -41,6 +41,10 @@ export default class extends Controller {
 
     event.currentTarget.parentElement.remove()
 
+  }
+
+  openField() {
+    this.fileFieldTarget.click()
   }
 
 }

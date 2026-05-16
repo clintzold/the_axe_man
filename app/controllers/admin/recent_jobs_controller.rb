@@ -12,13 +12,11 @@ class Admin::RecentJobsController < Admin::BaseController
 
   # GET /admin/recent_jobs/new
   def new
-    @path = admin_recent_jobs_path
     @recent_job = RecentJob.new
   end
 
   # GET /admin/recent_jobs/1/edit
   def edit
-    @path = admin_recent_job_path(@job)
   end
 
   # POST /admin/recent_jobs or /admin/recent_jobs.json
@@ -27,7 +25,7 @@ class Admin::RecentJobsController < Admin::BaseController
 
     respond_to do |format|
       if @recent_job.save
-        format.html { redirect_to admin_recent_jobs_path, notice: "Recent job was successfully created." }
+        format.html { redirect_to admin_recent_jobs_path, notice: "Job was successfully created." }
         format.json { render :show, status: :created, location: @recent_job }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,9 +37,8 @@ class Admin::RecentJobsController < Admin::BaseController
   # PATCH/PUT /admin/recent_jobs/1 or /admin/recent_jobs/1.json
   def update
     respond_to do |format|
-      @recent_job.images.attach images_params[:images].compact_blank!
       if @recent_job.update(recent_job_update_params)
-        format.html { redirect_to admin_recent_jobs_path, notice: "Recent job was successfully updated.", status: :see_other }
+        format.html { redirect_to admin_recent_jobs_path, notice: "Job was successfully updated.", status: :see_other }
         format.json { render :show, status: :ok, location: @recent_job }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -50,13 +47,25 @@ class Admin::RecentJobsController < Admin::BaseController
     end
   end
 
-  def remove_image
-    @form = params[:form]
+  def change_main_image
+
     @recent_job = RecentJob.find(params[:job_id])
-    @image = ActiveStorage::Attachment.find(params[:id])
-    @image.purge_later
-    render turbo_stream: turbo_stream.update(
-      "images", partial: "images", locals: { recent_job: @recent_job}
+    @old_image = ActiveStorage::Attachment.find(params[:old_id])
+    @old_image.purge
+    @recent_job.main_image.attach(params[:new_image])
+    render turbo_stream: turbo_stream.replace(
+      "image" + params[:old_id], partial: "swap_main_image", locals: { recent_job: @recent_job, image: @recent_job.main_image }
+    )
+  end
+
+  def change_image
+
+    @recent_job = RecentJob.find(params[:job_id])
+    @old_image = ActiveStorage::Attachment.find(params[:old_id])
+    @old_image.purge
+    @recent_job.images.attach(params[:new_image])
+    render turbo_stream: turbo_stream.replace(
+      "image" + params[:old_id], partial: "swap_image", locals: { recent_job: @recent_job, image: @recent_job.images.last}
     )
   end
 
@@ -65,7 +74,7 @@ class Admin::RecentJobsController < Admin::BaseController
     @recent_job.destroy!
 
     respond_to do |format|
-      format.html { redirect_to admin_recent_jobs_path, notice: "Recent job was successfully destroyed.", status: :see_other }
+      format.html { redirect_to admin_recent_jobs_path, notice: "Job was successfully destroyed.", status: :see_other }
       format.json { head :no_content }
     end
   end
@@ -82,7 +91,7 @@ class Admin::RecentJobsController < Admin::BaseController
     end
 
     def recent_job_update_params
-      params.expect(recent_job: [ :location, :description, :main_image ])
+      params.expect(recent_job: [ :location, :description ])
     end
 
     def images_params

@@ -119,6 +119,14 @@ blockquote {
 
 /* IMAGES */
 
+.preview-image {
+
+  height: 100px;
+  width: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
 .carousel-image {
   width: 100%;
 }

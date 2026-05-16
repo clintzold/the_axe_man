@@ -1,0 +1,6 @@
+<%= turbo_frame_tag "image" + image.id.to_s do %>
+    <%= form_with url: admin_change_recent_job_main_image_path(recent_job, image.id), data: {controller: "submit-image"} do |f| %>
+    <%= image_tag image.variant(:thumb), data: { action: "click->submit-image#openField"}, width: 200, class: "preview-image" %>
+      <%= f.file_field :new_image, accept: 'image/*', data: { submit_image_target: "fileField", action: "change->submit-image#submit" }, class: "d-none" %>
+    <% end %>
+<% end %>

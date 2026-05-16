@@ -1,0 +1,65 @@
+  <div>
+
+
+    <span class="saira-stencil-one-regular text-white">Main Image</span>
+    <div class="my-1 d-flex">
+      <% if recent_job.main_image.attached? %>
+
+        <%= turbo_frame_tag "image" + recent_job.main_image.id.to_s do %>
+
+            <%= form_with url: admin_change_recent_job_main_image_path(recent_job, recent_job.main_image.id), data: {controller: "submit-image"} do |f| %>
+            <%= image_tag recent_job.main_image.variant(:thumb), data: { action: "click->submit-image#openField"}, class: "img-fluid preview-image" %>
+              <%= f.file_field :new_image, accept: 'image/*', data: { submit_image_target: "fileField", action: "change->submit-image#submit" }, class: "d-none" %>
+            <% end %>
+
+        <% end %>
+
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mb-1">
+    <span class="saira-stencil-one-regular text-white">Images</span>
+
+          <div class="d-flex flex-wrap gap-2">
+          <% if recent_job.images.attached? %>
+              <% recent_job.images.each do |image| %>
+        <%= turbo_frame_tag "image" + image.id.to_s do %>
+
+            <%= form_with url: admin_change_recent_job_image_path(recent_job, image.id), data: {controller: "submit-image"} do |f| %>
+            <%= image_tag image.variant(:thumb), data: { action: "click->submit-image#openField"}, class: "img-fluid preview-image" %>
+              <%= f.file_field :new_image, accept: 'image/*', data: { submit_image_target: "fileField", action: "change->submit-image#submit" }, class: "d-none" %>
+            <% end %>
+
+        <% end %>
+              <% end %>
+            <% end %>
+          </div>
+
+  </div>
+
+<%= form_with(model: recent_job, url: admin_recent_job_path(recent_job)) do |form| %>
+  <% if recent_job.errors.any? %>
+    <div style="color: red">
+      <ul>
+        <% recent_job.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :location, style: "display: block", class: "saira-stencil-one-regular text-white" %>
+    <%= form.text_field :location, required: true, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block", class: "saira-stencil-one-regular text-white" %>
+    <%= form.textarea :description, required: true, class: "form-control" %>
+  </div>
+
+  <div class="mt-3">
+    <%= form.submit "Update Job", class: "saira-stencil-one-regular btn btn-warning cta-btn" %>
+  </div>
+<% end %>

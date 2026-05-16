@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
-    get "recent_jobs/:job_id/images/:id", to: "recent_jobs#remove_image", as: :remove_recent_job_image
+    post "recent_jobs/:job_id/main_image/:old_id", to: "recent_jobs#change_main_image", as: :change_recent_job_main_image
+    post "recent_jobs/:job_id/image/:old_id", to: "recent_jobs#change_image", as: :change_recent_job_image
     resources :recent_jobs
     resources :testimonials, except: [ :show ]
     # Image Control
