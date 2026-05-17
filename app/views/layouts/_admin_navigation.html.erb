@@ -5,7 +5,7 @@
       <em>The Axe Man</em> <small class="opacity-50">Admin</small>
     </a>
     <% if authenticated? %>
-      <%= button_to "Sign Out", session_path, class: "ms-auto btn btn-danger cta-btn saira-stencil-one-regular" %>
+      <%= button_to "Sign Out", session_path, class: "ms-auto btn btn-danger cta-btn saira-stencil-one-regular", method: :delete %>
     <% end %>
   </div>
 </nav>
