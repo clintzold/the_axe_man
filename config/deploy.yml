@@ -103,7 +103,7 @@ builder:
 accessories:
   postgres:
     image: postgres:15
-    host: 31.97.209.135
+    host: 177.7.57.220
     env:
       secret:
         - POSTGRES_PASSWORD
