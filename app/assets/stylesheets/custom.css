@@ -196,6 +196,12 @@ blockquote {
   right: 2px;
 }
 
+.service-card-img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+}
+
 @media (max-width: 480px) {
   .about-details-img {
     width: 35%;
