@@ -16,7 +16,7 @@
               <span class="text-white">Got a tough job?</span> Let us chop it down to size.
           <%= link_to "Call Now",
             "tel:+17344507995",
-            class: "cta-btn btn text-nowrap btn-warning fs-5 ms-3 btn-sm-lg mb-1 shadow saira-stencil-one-regular", style: "text-shadow: none;" %>
+            class: "cta-btn-lg px-4 btn text-nowrap btn-warning fs-5 ms-3 btn-sm-lg mb-1 shadow saira-stencil-one-regular", style: "text-shadow: none;" %>
             </p>
           </div>
         </div>
@@ -100,7 +100,7 @@
           <div class="container d-flex justify-content-end pe-5">
             <%= link_to "Read More",
               about_path,
-              class: "cta-btn btn text-nowrap btn-warning pt-2 btn-sm-lg shadow saira-stencil-one-regular", style: "text-shadow: none;" %>
+              class: "cta-btn btn text-nowrap btn-warning btn-sm-lg shadow saira-stencil-one-regular", style: "text-shadow: none;" %>
           </div>
         </div>
       </div>
@@ -114,9 +114,15 @@
     </div>
     <!-- Images -->
     <div class="row flex-wrap justify-content-center py-3 px-2 px-sm-0">
-        <%= image_tag "https://placehold.co/400", class: " gallery-img p-1" %>
-        <%= image_tag "https://placehold.co/400", class: " gallery-img p-1" %>
-        <%= image_tag "https://placehold.co/400", class: " gallery-img p-1" %>
+      <% unless @jobs.nil? || @jobs.count != 3 %>
+        <% @jobs.each do |job| %>
+          <%= image_tag job.main_image, class: "gallery-img p-1" %>
+        <% end %>
+      <% else %>
+        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
+        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
+        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
+      <% end %>
     </div>
     <!-- Gallery CTA -->
     <div class="container d-flex justify-content-center text-nowrap">

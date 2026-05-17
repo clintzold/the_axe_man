@@ -172,6 +172,9 @@ blockquote {
 }
 
 .gallery-img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
   width: clamp(20vw, 400px, 100vw);
 }
 

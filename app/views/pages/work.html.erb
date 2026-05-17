@@ -26,13 +26,13 @@
     <h1 class="display-3 rubik-dirt-regular text-white mb-5 text-center">Recent Work</h1>
     <% @jobs.each do |job| %>
       <div class="row justify-content-center flex-wrap-reverse px-0 py-2 py-md-3">
-        <div class="d-none d-md-block col-md-3">
+        <div class="d-none d-md-block col-md-3 col-xxl-2">
           <% job.images.each do |image| %>
-            <%= image_tag image.variant(:thumb), width: 300, height: 300, class: "img-fluid mb-3" %>
+            <%= image_tag image.variant(:thumb), width: 300, height: 300, class: "img-fluid w-100 mb-3" %>
           <% end %>
         </div>
 
-        <div class="col-12 col-sm-10 col-md-8 col-lg-7">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xxl-6">
           <div class="card bg-transparent border-0 rounded-0">
 
 
@@ -40,12 +40,12 @@
                     <div class="carousel-inner">
 
                       <div class="carousel-item active">
-                            <%= image_tag job.main_image.variant(:large), width: 1000, height: 1000, class: "img-fluid carousel-image" %>
+                            <%= image_tag job.main_image.variant(:large), width: 1000, height: 1000, class: "img-fluid w-100 carousel-image" %>
                       </div>
 
                       <% job.images.each do |image| %>
                         <div class="carousel-item">
-                              <%= image_tag image.variant(:large), width: 1000, height: 1000, class: "img-fluid carousel-image" %>
+                              <%= image_tag image.variant(:large), width: 1000, height: 1000, class: "img-fluid w-100 carousel-image" %>
                         </div>
                       <% end %>
 
