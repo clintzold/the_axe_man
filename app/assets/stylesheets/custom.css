@@ -242,6 +242,8 @@ blockquote {
   border-radius: 0;
   clip-path: polygon(100% 55%, 82% 100%, 0% 100%, 0% 45%, 18% 0%, 100% 0%);
   border: none;
+  padding-top: 8px;
+  padding-bottom: 4px;
 }
 
 .cta-btn-lg {
@@ -251,7 +253,7 @@ blockquote {
 }
 
 .show-controls > a, .show-controls button {
-  width: clamp(5vw, 150px, 28vw);
+  width: clamp(5vw, 125px, 28vw);
 }
 
 .fixed-icon-link {
