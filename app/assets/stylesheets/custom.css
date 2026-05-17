@@ -151,7 +151,7 @@ blockquote {
 }
 
 .carousel-image {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   object-position: center;
   max-width: 100%;
