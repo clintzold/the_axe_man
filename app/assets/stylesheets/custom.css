@@ -164,7 +164,7 @@ blockquote {
 
 .avatar {
   aspect-ratio: 1 / 1;
-  width: clamp(12vw, 150px, 32vw);
+  width: clamp(8vw, 150px, 32vw);
   height: auto;
   border-radius: 50%;
   object-fit: cover;
