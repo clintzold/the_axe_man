@@ -6,7 +6,7 @@
   z-index: -1;
   position: fixed;
   background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3)),
-              url('axe-stump.png');
+              url('axe-stump.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
@@ -22,7 +22,7 @@
   z-index: -1;
   position: fixed;
   background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3)),
-              url('stihl-chainsaw.png');
+              url('stihl-chainsaw.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
@@ -142,7 +142,8 @@ blockquote {
 }
 
 .carousel-image {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .avatar {

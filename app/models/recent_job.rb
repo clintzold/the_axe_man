@@ -1,10 +1,10 @@
 class RecentJob < ApplicationRecord
   has_one_attached :main_image do |attachable|
-    attachable.variant :large, resize_to_limit: [700, 700], saver: { strip: true, quality: 70 }, format: :webp
+    attachable.variant :large, resize_to_limit: [1000, 1000], saver: { strip: true, quality: 70 }, format: :webp
     attachable.variant :thumb, resize_to_limit: [300, 300], saver: { strip: true, quality: 70 }, format: :webp
   end
   has_many_attached :images do |attachable|
-    attachable.variant :large, resize_to_limit: [700, 700], saver: { strip: true, quality: 70 }, format: :webp
+    attachable.variant :large, resize_to_limit: [1000, 1000], saver: { strip: true, quality: 70 }, format: :webp
     attachable.variant :thumb, resize_to_limit: [300, 300], saver: { strip: true, quality: 70 }, format: :webp
   end
   validate :limit_images
