@@ -14,12 +14,13 @@
         <a class="nav-link" href="<%= services_path %>">Services</a>
         <a class="nav-link" href="<%= work_path %>">Work</a>
       </div>
-      <%= image_tag "american-flag-icon-transparent.png", size: "80x45", class: "ms-auto me-2 mb-3 mb-sm-0 opacity-75" %>
-      <div>
+      <%= image_tag "american-flag-icon-transparent.png", size: "80x45", class: "ms-auto me-2 d-none d-md-block mb-3 mb-sm-0 opacity-75" %>
+      <div class="d-flex justify-content-between align-items-center">
         <span class="saira-stencil-one-regular text-white opacity-75 contacts-text">
           <em>1-234-567-8901<br>info@the-axe-man.com</em>
         </span>
-        </div>
+        <%= image_tag "american-flag-icon-transparent.png", size: "80x45", class: "ms-auto me-2 d-md-none mb-sm-0 opacity-75" %>
+      </div>
     </div>
   </div>
 </nav>
