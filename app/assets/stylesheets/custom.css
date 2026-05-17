@@ -46,7 +46,7 @@ navbar, .footer-container {
 }
 
 .hero-section {
-  min-height: 800px;
+  min-height: 750px;
 }
 
 .content-section {
@@ -93,10 +93,15 @@ figcaption {
 }
 
 .testimonial {
+  min-height: 450px;
 }
 
 blockquote {
   font-family: "Saira Stencil One", sans-serif;
+}
+
+.testimony {
+  font-size: 1.2rem;
 }
 
 .text-shadow {
@@ -112,7 +117,7 @@ blockquote {
 }
 
 .admin-testimonial-card {
-  height: 450px;
+  min-height: 500px;
 }
 
 .job-card-body {
@@ -126,6 +131,10 @@ blockquote {
 @media ( max-width: 480px ) {
   .testimonial-text-container {
     width: 100%;
+  }
+
+  .testimony {
+    font-size: 1rem;
   }
 }
 
@@ -148,7 +157,7 @@ blockquote {
 
 .avatar {
   aspect-ratio: 1 / 1;
-  width: clamp(10vw, 150px, 25vw);
+  width: clamp(12vw, 150px, 32vw);
   height: auto;
   border-radius: 50%;
   object-fit: cover;
@@ -188,6 +197,16 @@ blockquote {
   .about-details-img {
     width: 35%;
   }
+
+  .value-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 0.5em;
+  }
+
+  .icon-container h4 {
+    font-size: 1rem;
+  }
 }
 /* BUTTONS */
 
@@ -217,6 +236,6 @@ blockquote {
 /* BREAK POINTS */
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 800px;
+    min-height: 650px;
   }
 }
