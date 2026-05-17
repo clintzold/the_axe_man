@@ -4,26 +4,26 @@
 
 <div class="container-fluid">
   <div class="row justify-content-center hero-section align-items-center">
-    <div class="container col-12 col-md-8">
+    <div class="container col-12 col-md-9">
       <h1 class="display-1 rubik-dirt-regular text-shadow-light">
         <span class="text-white">Talk is cheap. </span><span>Our work speaks for itself.</span>
       </h1>
       <p class="rubik-dirt-regular fs-3 text-shadow text-white">
-      See what we've done for your neighbours in Monroe and surrounding areas below.
+      See what we've done for your neighbours below.
       </p>
       <a href="#details" class="shadow px-4 btn btn-warning cta-btn-lg py-2 mt-3 saira-stencil-one-regular">
-        Read More
+        See More
         <i class="bi bi-chevron-down"></i>
       </a>
     </div>
   </div>
 </div>
 
-<section id="details">
-  <div class="container-fluid blur py-5">
+<section id="details" class="pb-4">
+  <div class="container-fluid blur pt-5 pb-1">
     <h1 class="display-3 rubik-dirt-regular text-white mb-5 text-center">Recent Work</h1>
     <% @jobs.each do |job| %>
-      <div class="row justify-content-center flex-wrap-reverse px-0 py-3">
+      <div class="row justify-content-center flex-wrap-reverse px-0 py-2 py-md-3">
         <div class="d-none d-md-block col-md-3">
           <% job.images.each do |image| %>
             <%= image_tag image.variant(:thumb), width: 300, height: 300, class: "img-fluid mb-3" %>
