@@ -105,7 +105,11 @@ blockquote {
 }
 
 .text-shadow {
-  text-shadow: 1px 2px 8px rgba(0, 0, 0);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.text-shadow-gray {
+  text-shadow: 1px 1px 5px rgba(75, 75, 75, 0.5);
 }
 
 .text-shadow-light {
