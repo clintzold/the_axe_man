@@ -4,18 +4,26 @@
       </h1>
     </div>
     <!-- Images -->
-    <div class="row flex-wrap justify-content-center py-3 px-2 px-sm-0">
+    <div class="row justify-content-center py-3 px-1 px-sm-0">
       <% unless jobs.nil? || jobs.count != 3 %>
         <% jobs.each do |job| %>
-          <%= image_tag job.main_image, class: "gallery-img p-1" %>
+          <div class="col col-md-3 px-1">
+            <%= image_tag job.main_image.variant(:medium), size: 500, class: "recent-gallery-img" %>
+          </div>
         <% end %>
       <% else %>
-        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
-        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
-        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
+        <div class="col col-md-3 px-1">
+          <%= image_tag "https://placehold.co/400", size: 500, class: "recent-gallery-img" %>
+        </div>
+        <div class="col col-md-3 px-1">
+          <%= image_tag "https://placehold.co/400", size: 500, class: "recent-gallery-img" %>
+        </div>
+        <div class="col col-md-3 px-1">
+          <%= image_tag "https://placehold.co/400", size: 500, class: "recent-gallery-img" %>
+        </div>
       <% end %>
     </div>
     <!-- Gallery CTA -->
     <div class="container d-flex justify-content-center text-nowrap">
-      <%= link_to "See More", work_path, class: "btn btn-warning shadow saira-stencil-one-regular cta-btn" %>
+      <%= link_to "See More", work_path, class: "btn btn-warning fs-5 shadow saira-stencil-one-regular cta-btn" %>
     </div>

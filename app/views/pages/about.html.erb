@@ -39,23 +39,23 @@
   </div>
 
   <!-- About Details -->
-  <div class="container-fluid blur pt-3">
+  <div class="container-fluid blur py-3">
     <div class="row justify-content-center align-items-center flex-wrap-reverse py-3 py-md-5 text-shadow-light">
-      <div class="col-12 col-sm-5 col-xl-5 py-3 py-sm-0">
+      <div class="col-12 col-sm-8 col-md-6 col-xl-5 py-3 py-sm-0">
         <h1 class="rubik-dirt-regular display-3 text-white">Our word is our <em>bond.</em></h1>
         <p class="saira-stencil-one-regular fs-5 text-white">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores est deserunt vitae doloremque facilis provident maxime nostrum quas aliquid! Consequuntur velit asperiores doloremque facere? Suscipit voluptatum, nesciunt consectetur at et, tempore nobis ab dicta, eveniet reiciendis consequuntur a. At earum expedita, unde provident dolor quaerat excepturi ab nobis numquam quos.
         </p>
       </div>
-      <div class="col-8  col-sm-3 col-xl-3">
+      <div class="col-8  col-sm-4 col-md-4 col-xl-3 col-xxl-2">
         <%= image_tag "chris-saw.webp", class: "img-fluid w-100 shadow" %>
       </div>
     </div>
 
-    <div class="row py-5 text-shadow-light">
+    <div class="row pt-3 pt-md-5 pb-5 text-shadow-light">
       <div class="col"></div>
 
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-md-10 col-xl-8 col-xxl-7">
         <h1 class="rubik-dirt-regular text-white mb-3">Professional service since 2024</h1>
         <%= image_tag "tree-trimming-cut-high.webp", class: "float-start me-3 about-details-img" %>
         <p class="saira-stencil-one-regular text-white">
@@ -82,16 +82,7 @@
       <%= link_to "Call Today", "tel:+17344507995", class: "btn btn-warning shadow px-4 cta-btn-lg saira-stencil-one-regular fs-5" %>
     </div>
 
-    <div class="row flex-wrap justify-content-center py-3 px-2 px-sm-0">
-      <% unless @jobs.nil? || @jobs.count != 3 %>
-        <% @jobs.each do |job| %>
-          <%= image_tag job.main_image, class: "gallery-img p-1" %>
-        <% end %>
-      <% else %>
-        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
-        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
-        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
-      <% end %>
-    </div>
+    <%= render "recent_work_preview", jobs: @jobs %>
+
   </div>
 </section>

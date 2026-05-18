@@ -154,6 +154,14 @@ blockquote {
   object-position: center;
 }
 
+.recent-gallery-img {
+  aspect-ratio: 3 / 2;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
 .carousel-image {
   aspect-ratio: 3 / 2;
   object-fit: cover;
@@ -245,8 +253,6 @@ blockquote {
   border-radius: 0;
   clip-path: polygon(100% 55%, 82% 100%, 0% 100%, 0% 45%, 18% 0%, 100% 0%);
   border: none;
-  padding-top: 8px;
-  padding-bottom: 4px;
 }
 
 .cta-btn-lg {
