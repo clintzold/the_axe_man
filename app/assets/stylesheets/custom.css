@@ -275,6 +275,6 @@ blockquote {
 /* BREAK POINTS */
 @media (min-width: 768px) {
   .cta-btn {
-    padding-top: 8px;
+    padding-top: 7px;
   }
 }
