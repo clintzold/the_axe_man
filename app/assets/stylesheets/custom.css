@@ -46,7 +46,7 @@ navbar, .footer-container {
 }
 
 .hero-section {
-  min-height: 750px;
+  min-height: 93vh;
 }
 
 .content-section {
@@ -269,6 +269,5 @@ blockquote {
 /* BREAK POINTS */
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 650px;
   }
 }

@@ -10,7 +10,7 @@
       <aside class="col"></aside>
 
       <main class="col-12 col-lg-10 col-xl-8 col-xxl-6">
-        <div class="container">
+        <div class="container py-xxl-5">
           <div class="d-flex align-items-center hero-section">
             <p class="display-1 rubik-dirt-regular mt-5" style="text-shadow: 1px 1px 5px rgba(75, 75, 75, 0.5);">
               <span class="text-white">Got a tough job?</span> Let us chop it down to size.
@@ -30,38 +30,38 @@
 <!-- Services Preview -->
 <section id="services">
   <div class="container-fluid">
-    <div class="row py-5">
+    <div class="row py-5 justify-content-center">
 
-      <div class="container col-12 col-sm-4 mb-5">
+      <div class="container col-12 col-sm-4 mb-5 px-3">
         <div class="bg-transparent d-flex flex-column align-items-center">
           <%= image_tag "tree-fell-stihl.webp", class: "card-image service-card-img w-75 shadow mb-2" %>
           <div class="card-body text-center text-white text-shadow-light">
-            <h3 class="card-title saira-stencil-one-regular">Tree Services</h3>
-            <p class="card-text saira-stencil-one-regular">
+            <h3 class="card-title saira-stencil-one-regular mb-1">Tree Services</h3>
+            <p class="card-text saira-stencil-one-regular fs-5">
             Stumps, over-hanging branches, dead trees in precarious places. With the right lines, equipment and crew we handle it all while keeping your property safe.  
             </p>
           </div>
         </div>
       </div>
 
-      <div class="container col-12 col-sm-4 mb-5">
+      <div class="container col-12 col-sm-4 mb-5 px-3">
         <div class="bg-transparent  d-flex flex-column align-items-center">
           <%= image_tag "landscape-corner-house.webp", class: "card-image service-card-img w-75 shadow mb-2" %>
           <div class="card-body text-center text-white text-shadow-light">
-            <h3 class="card-title saira-stencil-one-regular">Landscaping</h3>
-            <p class="card-text saira-stencil-one-regular">
+            <h3 class="card-title saira-stencil-one-regular mb-1">Landscaping</h3>
+            <p class="card-text saira-stencil-one-regular fs-5">
             Mulch, stone, trees and gardens. How about that driveway that's been overtaken by weeds and wet spots? Our professionals can turn your property into paradise.
             </p>
           </div>
         </div>
       </div>
 
-      <div class="container col-12 col-sm-4 mb-3">
+      <div class="container col-12 col-sm-4 mb-3 px-3">
         <div class="bg-transparent  d-flex flex-column align-items-center">
           <%= image_tag "trailer-wood1.webp", class: "card-image service-card-img w-75 shadow mb-2" %>
           <div class="card-body text-center text-white text-shadow-light">
-            <h3 class="card-title saira-stencil-one-regular">Premium Firewood</h3>
-            <p class="card-text saira-stencil-one-regular">
+            <h3 class="card-title saira-stencil-one-regular mb-1">Premium Firewood</h3>
+            <p class="card-text saira-stencil-one-regular fs-5">
             Properly seasoned hardwood makes all the difference when winter hits hard. Keep the cold out and save money burning wood that is cured right.
             </p>
           </div>
@@ -107,26 +107,8 @@
     </div>
 
     <!-- Recent Work Gallery -->
-    <div class="container pt-5 border-top mt-3">
-      <h1 class=" text-white text-center rubik-dirt-regular">
-        Check out our recent jobs.
-      </h1>
-    </div>
-    <!-- Images -->
-    <div class="row flex-wrap justify-content-center py-3 px-2 px-sm-0">
-      <% unless @jobs.nil? || @jobs.count != 3 %>
-        <% @jobs.each do |job| %>
-          <%= image_tag job.main_image, class: "gallery-img p-1" %>
-        <% end %>
-      <% else %>
-        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
-        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
-        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
-      <% end %>
-    </div>
-    <!-- Gallery CTA -->
-    <div class="container d-flex justify-content-center text-nowrap">
-      <%= link_to "See More", work_path, class: "btn btn-warning shadow saira-stencil-one-regular cta-btn" %>
-    </div>
+
+    <%= render "recent_work_preview", jobs: @jobs %>
+
   </div>
 </section>

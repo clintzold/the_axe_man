@@ -1,0 +1,21 @@
+    <div class="container pt-5 border-top mt-3">
+      <h1 class=" text-white text-center rubik-dirt-regular">
+        Check out our recent jobs.
+      </h1>
+    </div>
+    <!-- Images -->
+    <div class="row flex-wrap justify-content-center py-3 px-2 px-sm-0">
+      <% unless jobs.nil? || jobs.count != 3 %>
+        <% jobs.each do |job| %>
+          <%= image_tag job.main_image, class: "gallery-img p-1" %>
+        <% end %>
+      <% else %>
+        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
+        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
+        <%= image_tag "https://placehold.co/400", class: "gallery-img p-1" %>
+      <% end %>
+    </div>
+    <!-- Gallery CTA -->
+    <div class="container d-flex justify-content-center text-nowrap">
+      <%= link_to "See More", work_path, class: "btn btn-warning shadow saira-stencil-one-regular cta-btn" %>
+    </div>
