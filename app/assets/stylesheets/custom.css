@@ -273,7 +273,8 @@ blockquote {
 }
 
 /* BREAK POINTS */
-@media (max-width: 768px) {
-  .hero-section {
+@media (min-width: 768px) {
+  .cta-btn {
+    padding-top: 8px;
   }
 }
