@@ -272,9 +272,17 @@ blockquote {
   right: 10px;
 }
 
+
 /* BREAK POINTS */
 @media (min-width: 768px) {
   .cta-btn {
     padding-top: 7px;
   }
+}
+
+@media (max-width: 480px) {
+  .carousel-control-prev, .carousel-control-next {
+    opacity: 0;
+  }
+
 }
