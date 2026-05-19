@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   end
 
   def work
-    @jobs = RecentJob.includes(main_image_attachment: { blob: :variant_records }, images_attachments: { blob: :variant_records })
+    @jobs = RecentJob.order(created_at: :desc).limit(4).includes(main_image_attachment: { blob: :variant_records }, images_attachments: { blob: :variant_records })
   end
 
   private
