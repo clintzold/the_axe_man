@@ -28,7 +28,7 @@
       <div class="row justify-content-center flex-wrap-reverse px-0 py-2 py-md-3">
         <div class="d-none d-md-block col-md-3 col-xxl-2">
           <% job.images.each do |image| %>
-            <%= image_tag image.variant(:thumb), width: 300, height: 300, class: "img-fluid w-100 mb-3" %>
+            <%= image_tag image.variant(:medium), width: 300, height: 300, class: "img-fluid w-100 mb-3" %>
           <% end %>
         </div>
 
