@@ -280,9 +280,3 @@ blockquote {
   }
 }
 
-@media (max-width: 480px) {
-  .carousel-control-prev, .carousel-control-next {
-    opacity: 0;
-  }
-
-}
