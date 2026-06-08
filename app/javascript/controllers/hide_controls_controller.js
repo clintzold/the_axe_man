@@ -3,7 +3,6 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="hide-controls"
 export default class extends Controller {
   connect() {
-    console.log("connected to", this.element)
 
     this.checkScreenSize()
   }
