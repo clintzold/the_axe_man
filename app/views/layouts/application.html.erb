@@ -55,7 +55,9 @@
 
     <%= yield %>
 
-    <%= render "shared/testimonials", testimonials: @testimonials %>
+    <% if @testimonials.any? %> 
+      <%= render "shared/testimonials", testimonials: @testimonials %>
+    <% end %>
 
     <%= render "layouts/footer" %>
   </body>
