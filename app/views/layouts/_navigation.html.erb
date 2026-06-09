@@ -8,11 +8,11 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="<%= home_path %>">Home</a>
-        <a class="nav-link" href="<%= about_path %>">About</a>
-        <a class="nav-link" href="<%= services_path %>">Services</a>
-        <a class="nav-link" href="<%= work_path %>">Work</a>
+      <div class="navbar-nav" data-controller="nav-highlight">
+        <a id="home" class="nav-link active" aria-current="page" data-nav-highlight-target="navLink" href="<%= home_path %>">Home</a>
+        <a id="about" class="nav-link" data-nav-highlight-target="navLink" href="<%= about_path %>">About</a>
+        <a id="services" class="nav-link" data-nav-highlight-target="navLink" href="<%= services_path %>">Services</a>
+        <a id="work" class="nav-link" data-nav-highlight-target="navLink" href="<%= work_path %>">Work</a>
       </div>
       <%= image_tag "american-flag-icon-small.png", alt: "An icon depicting the American flag.", size: "80x45", class: "ms-auto me-2 d-none d-md-block mb-3 mb-sm-0 opacity-75" %>
       <div class="d-flex justify-content-between align-items-center">
