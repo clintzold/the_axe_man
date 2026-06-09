@@ -22,6 +22,26 @@
     <%= preload_link_tag asset_path("SairaStencil-Bold.woff2"), as: "font", type: "font/woff2", crossorigin: "anonymous" %>
     <%= preload_link_tag asset_path("axe-stump.webp"), as: "image", type: "image/webp" %>
 
+    <style>
+      @font-face {
+        font-family: "Rubik Dirt";
+        src: url('RubikDirt-Regular.woff2') format('woff2'),
+            url('RubikDirt-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Saira Stencil One";
+        src: url('SairaStencil-Bold.woff2') format('woff2'),
+            url('SairaStencil-Bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
