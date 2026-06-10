@@ -5,7 +5,7 @@
           <div class="carousel-inner">
 
             <div class="carousel-item active">
-                  <%= image_tag recent_job.main_image.variant(:large), width: 1000, height: 1000, class: "img-fluid carousel-image" %>
+                  <%= image_tag recent_job.main_image.variant(:large), width: 1000, height: 1000, class: "img-fluid carousel-image", fetchpriority: "high" %>
             </div>
 
             <% recent_job.images.each do |image| %>
