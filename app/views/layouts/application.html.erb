@@ -7,6 +7,16 @@
     <meta name="application-name" content="The Axe Man">
     <meta name="description" content="Arborist and landscaping business serving residential and commercial properties across Monroe County, Michigan, USA.">
     <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Core Open Graph Tags -->
+    <meta property="og:title" content="<%= content_for?(:title) ? yield(:title) : "The Axe Man" %>" />
+    <meta property="og:description" content="Arborist and landscaping business serving residential and commercial properties across Monroe County, Michigan, USA.">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    
+    <!-- Link Preview Image (Must be an absolute URL) -->
+    <meta property="og:image" content="<%= image_url('axe-logo-link.png') %>" />
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
