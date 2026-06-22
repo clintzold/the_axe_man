@@ -92,6 +92,10 @@ figcaption {
   font-weight: bold;
 }
 
+.testimonials-section {
+  min-height: 700px;
+}
+
 .testimonial {
   min-height: 450px;
 }
@@ -138,7 +142,7 @@ blockquote {
   }
 
   .testimony {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
