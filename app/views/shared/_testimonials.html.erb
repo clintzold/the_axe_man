@@ -2,7 +2,7 @@
 <section id="testimonials" class="testimonials-section">
   <div class="container-fluid py-5 px-0">
     <div class="container">
-      <h1 class="rubik-dirt-regular display-4 text-center text-shadow-light text-white mb-3">
+      <h1 class="rubik-dirt-regular display-4 text-center text-shadow-light text-white mb-5">
         Our clients say it best.
       </h1>
     </div>
@@ -21,7 +21,7 @@
                   <% if testimonial_first.image.attached? %>
                     <%= image_tag testimonial_first.image.variant(:avatar), class: "avatar mb-5" %>
                   <% else %>
-                    <%= image_tag "placeholder-avatar.png", class: "avatar" %>
+                    <%= image_tag "placeholder-avatar.webp", class: "avatar mb-5" %>
                   <% end %>
 
                 <div class="testimonial-text-container">
@@ -48,7 +48,7 @@
                   <% if testimonial.image.attached? %>
                     <%= image_tag testimonial.image.variant(:avatar), class: "avatar mb-5" %>
                   <% else %>
-                    <%= image_tag "placeholder-avatar.png", class: "avatar mb-5" %>
+                    <%= image_tag "placeholder-avatar.webp", class: "avatar mb-5" %>
                   <% end %>
 
                   <div class="testimonial-text-container">
