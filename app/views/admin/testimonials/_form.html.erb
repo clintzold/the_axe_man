@@ -10,7 +10,7 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="mb-2">
     <%= form.label :name, style: "display: block", class: "saira-stencil-one-regular text-white" %>
     <%= form.text_field :name, class: "form-control" %>
   </div>
@@ -31,19 +31,14 @@
 
   </div>
 
-  <div>
+  <div class="my-2">
     <%= form.label :client_type, style: "display: block", class: "saira-stencil-one-regular text-white" %>
-    <%= form.text_field :client_type, class: "form-control" %>
+    <%= form.select :client_type, [["Homeowner", "Homeowner"], ["Business Owner", "Business Owner"]], {}, { class: "form-select" } %>
   </div>
 
-  <div>
-    <%= form.label :location, style: "display: block", class: "saira-stencil-one-regular text-white" %>
-    <%= form.text_field :location, class: "form-control" %>
-  </div>
-
-  <div>
+  <div class="mb-2">
     <%= form.label :testimony, style: "display: block", class: "saira-stencil-one-regular text-white" %>
-    <%= form.textarea :testimony, class: "form-control", maxlength: 150 %>
+    <%= form.textarea :testimony, class: "form-control", maxlength: 400, rows: 5 %>
   </div>
 
   <div class="mt-2">

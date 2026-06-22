@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   private
 
   def get_testimonials
-    @testimonials = Testimonial.includes( image_attachment: { blob: :variant_records})
+    @testimonials = Testimonial.includes( image_attachment: { blob: :variant_records}).order(created_at: :desc)
   end
 
   def get_recent_job_images

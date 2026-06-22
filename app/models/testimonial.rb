@@ -1,5 +1,5 @@
 class Testimonial < ApplicationRecord
-  validates :name, :client_type, :location, :testimony, presence: true
+  validates :name, :client_type, :testimony, presence: true
   validate :image_attached?
 
   has_one_attached :image do |attachable|
