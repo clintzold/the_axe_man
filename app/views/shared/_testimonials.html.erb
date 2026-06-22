@@ -18,7 +18,11 @@
 
               <div class="d-flex flex-column align-items-center justify-content-center testimonial">
                 <% testimonial_first = testimonials.first %>
-                <%= image_tag testimonial_first.image.variant(:avatar), class: "avatar mb-5" %>
+                  <% if testimonial_first.image.attached? %>
+                    <%= image_tag testimonial_first.image.variant(:avatar), class: "avatar mb-5" %>
+                  <% else %>
+                    <%= image_tag "placeholder-avatar.png", class: "avatar" %>
+                  <% end %>
 
                 <div class="testimonial-text-container">
                   <figure class="text-center text-shadow">
@@ -41,7 +45,11 @@
               <div class="carousel-item">
 
                 <div class="d-flex flex-column align-items-center justify-content-center testimonial">
-                  <%= image_tag testimonial.image.variant(:avatar), class: "avatar mb-5" %>
+                  <% if testimonial.image.attached? %>
+                    <%= image_tag testimonial.image.variant(:avatar), class: "avatar mb-5" %>
+                  <% else %>
+                    <%= image_tag "placeholder-avatar.png", class: "avatar mb-5" %>
+                  <% end %>
 
                   <div class="testimonial-text-container">
                     <figure class="text-center text-shadow">

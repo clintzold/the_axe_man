@@ -1,7 +1,13 @@
     <div class="col-12 col-sm-8 col-md-7 col-lg-5 col-xl-4 col-xxl-3">
       <div class="card blur rounded-0 border-0 shadow mb-4 admin-testimonial-card">
         <div class="card-body d-flex flex-column align-items-center justify-content-center p-3">
-          <%= image_tag testimonial.image.variant(:avatar), class: "avatar" %>
+
+          <% if testimonial.image.attached? %>
+            <%= image_tag testimonial.image.variant(:avatar), class: "avatar" %>
+          <% else %>
+            <%= image_tag "placeholder-avatar.png", class: "avatar" %>
+          <% end %>
+
           <div class="pt-5 card-text">
             <figure class="text-center">
               <blockquote class="blockquote px-3">
