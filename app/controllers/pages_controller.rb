@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  # allow_unauthenticated_access
+  allow_unauthenticated_access
   before_action :get_testimonials
   before_action :get_recent_job_images, except: [:work]
 
