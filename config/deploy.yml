@@ -22,7 +22,9 @@ servers:
 #
 proxy:
   ssl: true
-  host: the-axe-man.com
+  hosts:
+    - the-axe-man.com
+    - www.the-axe-man.com
 ssh:
   port: 5119
 # Where you keep your container images.
