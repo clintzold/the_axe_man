@@ -1,26 +1,22 @@
 # README
 
-An app for a tree trimming business based out of Michigan
+An e-commerce Rails app for a tree removal/landscaping business.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Specs:
+  
+  Ruby Version: 4.0.3
 
-Things you may want to cover:
+  DB: postgreSQL 15
 
-* Ruby version
+  Auth:
+    - Default Rails 8 authentication for admin purposes(product creation, order management, pickup scheduling, etc...)
 
-* System dependencies
+  SCSS:
+    Bootstrap 5.3
 
-* Configuration
+Why Rails?
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  Although Rails is a heavy framework for what is currently a static site, the client requested a CMS to handle certain 
+  content himself. He also expressed interest in potential ecommerce capabilities, a blog and delivery scheduling tools for 
+  future product sales. Rails was an obvious choice to future proof the web app for his business as well as provide 
+  lightweight CMS capabilities that can be expanded in the future.
